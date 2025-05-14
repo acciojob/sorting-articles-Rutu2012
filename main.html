@@ -2,88 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Band List</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    h1 {
-      margin-bottom: 20px;
-    }
-    ul#band {
-      list-style-type: none;
-      padding: 0;
-    }
-    ul#band li {
-      padding: 5px 0;
-    }
-	  /*  your css code here. If applicable */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');
-  background-size: cover;
-}
-
-.container {
-  max-width: 400px;
-  margin: 1px auto;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 1);
-  border-radius: 1px;
-  box-shadow: 0 9px 12px rgba(0.2, 0, 0, 0.2);
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-#band {
-  list-style: square inside;
-  padding: 0;
-}
-
-#band li {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-  </style>
+  <title>Alphabetical Article Sorter</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="container">
+    <h2>Sorted Articles</h2>
+    <ul id="bands"></ul>
+  </div>
 
-  <h1>Band List</h1>
-  <ul id="band"></ul>
-
-  <script>
-    const bands = [
-      'The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean',
-      'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans',
-      'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'
-    ];
-
-    // Function to strip articles for sorting
-    function stripArticle(name) {
-      return name.replace(/^(a |an |the )/i, '').trim();
-    }
-
-    // Sort the bands ignoring articles
-    const sortedBands = bands.sort((a, b) => {
-      const nameA = stripArticle(a).toLowerCase();
-      const nameB = stripArticle(b).toLowerCase();
-      return nameA.localeCompare(nameB);
-    });
-
-    // Add to the DOM
-    const bandList = document.getElementById('band');
-    sortedBands.forEach(band => {
-      const li = document.createElement('li');
-      li.textContent = band;
-      bandList.appendChild(li);
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
+
 </html>
